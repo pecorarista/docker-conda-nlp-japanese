@@ -52,8 +52,8 @@ RUN wget --quiet "http://nlp.ist.i.kyoto-u.ac.jp/DLcounter/lime.cgi?down=http://
 # NEologd
 RUN git clone --depth 1 https://github.com/neologd/mecab-ipadic-neologd.git && \
     cd mecab-ipadic-neologd && \
-    ./bin/install-mecab-ipadic-neologd -n -y -p /var/lib/mecab/dic/mecab-ipadic-neologd && \
-    cd \
+    ./bin/install-mecab-ipadic-neologd --newest -y --prefix /var/lib/mecab/dic/mecab-ipadic-neologd && \
+    cd && \
     rm -rf mecab-ipadic-neologd
 
 CMD ["/bin/bash"]
